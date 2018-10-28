@@ -72,7 +72,8 @@ class ProposalsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $proposal = Proposal::find($id);
+        return view('proposals.edit')->with('proposal',$proposal);
     }
 
     /**
@@ -84,7 +85,20 @@ class ProposalsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'proposaltitle' => 'required',
+            'proposal' => 'required',
+            'cost' => 'required'
+        ]);
+
+        //create proposal
+        $proposal = Proposal::find($id);
+        $proposal->proposaltitle = $request->input('proposaltitle');
+        $proposal->proposal = $request->input('proposal');
+        $proposal->cost = $request->input('cost');
+        $proposal->save();
+
+        return redirect('/proposals')->with('success', 'Post Updated');
     }
 
     /**

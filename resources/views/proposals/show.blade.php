@@ -8,4 +8,6 @@
     </div>
     <hr>
     <small>Prepared on {{$proposal->created_at}}</small>
+    <hr>
+    <a href="/proposals/{{$proposal->id}}/edit" class="btn btn-default">Edit</a>
 @endsection
