@@ -15,6 +15,9 @@ class CreateProposalsTable extends Migration
     {
         Schema::create('proposals', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('proposaltitle');
+            $table->mediumText('proposal');
+            $table->integer('cost');
             $table->timestamps();
         });
     }
