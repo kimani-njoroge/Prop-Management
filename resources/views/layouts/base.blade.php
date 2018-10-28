@@ -11,6 +11,7 @@
 <body>
 @include('nav.navbar')
 <div class="container">
+    @include('nav.messages')
     @yield('content')
 </div>
 </body>

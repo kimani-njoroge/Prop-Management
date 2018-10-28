@@ -25,7 +25,7 @@ class ProposalsController extends Controller
      */
     public function create()
     {
-        //
+        return view('proposals.create');
     }
 
     /**
@@ -36,7 +36,13 @@ class ProposalsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'proposaltitle' => 'required',
+            'proposal' => 'required',
+            'cost' => 'required'
+        ]);
+
+        return '123';
     }
 
     /**
