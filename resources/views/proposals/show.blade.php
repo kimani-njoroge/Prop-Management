@@ -4,7 +4,7 @@
     <h1>{{$proposal->proposaltitle}}</h1>
 
     <div>
-        {{$proposal->proposal}}
+        {!! $proposal->proposal !!}
     </div>
     <hr>
     <small>Prepared on {{$proposal->created_at}}</small>

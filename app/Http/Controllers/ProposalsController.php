@@ -42,7 +42,14 @@ class ProposalsController extends Controller
             'cost' => 'required'
         ]);
 
-        return '123';
+        //create proposal
+        $proposal = new Proposal();
+        $proposal->proposaltitle = $request->input('proposaltitle');
+        $proposal->proposal = $request->input('proposal');
+        $proposal->cost = $request->input('cost');
+        $proposal->save();
+
+        return redirect('/proposals')->with('success', 'Post Created');
     }
 
     /**
