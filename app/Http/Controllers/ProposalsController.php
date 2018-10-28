@@ -109,6 +109,8 @@ class ProposalsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $proposal = Proposal::find($id);
+        $proposal->delete();
+        return redirect('/proposals')->with('success', 'Post Deleted');
     }
 }
