@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.app')
 @section('content')
     <h1>Create proposal</h1>
     {!! Form::open(['action' => 'ProposalsController@store', 'method'=> 'POST']) !!}

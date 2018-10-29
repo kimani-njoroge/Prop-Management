@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.app')
 @section('content')
     <a href="/proposals" class="btn btn-defsult">Go Back</a>
     <h1>{{$proposal->proposaltitle}}</h1>

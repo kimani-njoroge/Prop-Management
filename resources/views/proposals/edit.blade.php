@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.app')
 @section('content')
     <h1>Edit proposal</h1>
     {!! Form::open(['action' => ['ProposalsController@update', $proposal->id], 'method'=> 'POST']) !!}

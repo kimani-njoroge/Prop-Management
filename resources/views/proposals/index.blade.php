@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.app')
 @section('content')
     <h1>proposals</h1>
     @if(count($proposals)> 0)

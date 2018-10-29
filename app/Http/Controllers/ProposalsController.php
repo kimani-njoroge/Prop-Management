@@ -47,6 +47,7 @@ class ProposalsController extends Controller
         $proposal->proposaltitle = $request->input('proposaltitle');
         $proposal->proposal = $request->input('proposal');
         $proposal->cost = $request->input('cost');
+        $proposal->user_id = auth()->user()->id;
         $proposal->save();
 
         return redirect('/proposals')->with('success', 'Post Created');

@@ -18,3 +18,6 @@ Route::get('/', function () {
 Route::get('/','PagesController@index');
 
 Route::resource('proposals','ProposalsController');
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index')->name('home');
