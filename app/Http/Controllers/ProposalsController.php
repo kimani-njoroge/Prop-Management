@@ -50,7 +50,7 @@ class ProposalsController extends Controller
         $proposal->user_id = auth()->user()->id;
         $proposal->save();
 
-        return redirect('/proposals')->with('success', 'Post Created');
+        return redirect('/proposals')->with('success', 'Proposal Created');
     }
 
     /**
@@ -99,7 +99,7 @@ class ProposalsController extends Controller
         $proposal->cost = $request->input('cost');
         $proposal->save();
 
-        return redirect('/proposals')->with('success', 'Post Updated');
+        return redirect('/proposals')->with('success', 'Proposal Updated');
     }
 
     /**
@@ -112,6 +112,6 @@ class ProposalsController extends Controller
     {
         $proposal = Proposal::find($id);
         $proposal->delete();
-        return redirect('/proposals')->with('success', 'Post Deleted');
+        return redirect('/proposals')->with('success', 'Proposal Deleted');
     }
 }

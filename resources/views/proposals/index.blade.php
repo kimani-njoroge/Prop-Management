@@ -5,7 +5,7 @@
         @foreach($proposals as $proposal)
             <div class="well">
                 <h3><a href="/proposals/{{$proposal->id}}">{{$proposal->proposaltitle}}</a></h3>
-                <small>Prepared on {{$proposal->created_at}}</small>
+                <small>Prepared on {{$proposal->created_at}} by {{$proposal->user->name}}</small>
             </div>
         @endforeach
     @else
