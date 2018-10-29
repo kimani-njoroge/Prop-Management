@@ -8,6 +8,17 @@ use App\Proposal;
 class ProposalsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     * $this->middleware('auth',['except' => ['views']]);--- in the event
+     * one needs to display data to public users
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -74,6 +85,11 @@ class ProposalsController extends Controller
     public function edit($id)
     {
         $proposal = Proposal::find($id);
+
+        //check for correct user
+        if(auth()->user()->id !==$proposal->user_id){
+            return redirect('/proposals')->with('error','Unauthorized Access');
+        }
         return view('proposals.edit')->with('proposal',$proposal);
     }
 
@@ -111,6 +127,13 @@ class ProposalsController extends Controller
     public function destroy($id)
     {
         $proposal = Proposal::find($id);
+
+        // check for correct user
+
+        if(auth()->user()->id !==$proposal->user_id){
+            return redirect('/proposals')->with('error','Unauthorized Access');
+        }
+        
         $proposal->delete();
         return redirect('/proposals')->with('success', 'Proposal Deleted');
     }
