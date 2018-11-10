@@ -8,7 +8,7 @@
     </div>
     <div class="form-group">
         {{Form::Label('proposal', 'Proposal')}}
-        {{Form::textarea('proposal', $proposal->text, ['id' => 'article-ckeditor','class' => 'form-control', 'placeholder' => 'Proposal'])}}
+        {{Form::textarea('proposal', $proposal->summary, ['id' => 'article-ckeditor','class' => 'form-control', 'placeholder' => 'Proposal'])}}
     </div>
     <div class="form-group">
         {{Form::Label('cost', 'Cost')}}

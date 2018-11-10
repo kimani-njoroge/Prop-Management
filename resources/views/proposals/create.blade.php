@@ -7,8 +7,8 @@
         {{Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Title'])}}
     </div>
     <div class="form-group">
-        {{Form::Label('text', 'Proposal')}}
-        {{Form::textarea('text', '', ['id' => 'article-ckeditor','class' => 'form-control', 'placeholder' => 'Proposal'])}}
+        {{Form::Label('summary', 'Proposal')}}
+        {{Form::textarea('summary', '', ['id' => 'article-ckeditor','class' => 'form-control', 'placeholder' => 'Proposal'])}}
     </div>
     <div class="form-group">
         {{Form::Label('cost', 'Cost')}}
