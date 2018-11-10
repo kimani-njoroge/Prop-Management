@@ -48,15 +48,15 @@ class ProposalsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'proposaltitle' => 'required',
-            'proposal' => 'required',
+            'title' => 'required',
+            'text' => 'required',
             'cost' => 'required'
         ]);
 
         //create proposal
         $proposal = new Proposal();
-        $proposal->proposaltitle = $request->input('proposaltitle');
-        $proposal->proposal = $request->input('proposal');
+        $proposal->title = $request->input('title');
+        $proposal->text = $request->input('text');
         $proposal->cost = $request->input('cost');
         $proposal->user_id = auth()->user()->id;
         $proposal->save();
@@ -103,15 +103,15 @@ class ProposalsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'proposaltitle' => 'required',
-            'proposal' => 'required',
+            'title' => 'required',
+            'text' => 'required',
             'cost' => 'required'
         ]);
 
         //create proposal
         $proposal = Proposal::find($id);
-        $proposal->proposaltitle = $request->input('proposaltitle');
-        $proposal->proposal = $request->input('proposal');
+        $proposal->title = $request->input('title');
+        $proposal->text = $request->input('text');
         $proposal->cost = $request->input('cost');
         $proposal->save();
 

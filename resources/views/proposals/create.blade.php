@@ -3,12 +3,12 @@
     <h1>Create proposal</h1>
     {!! Form::open(['action' => 'ProposalsController@store', 'method'=> 'POST']) !!}
     <div class="form-group">
-        {{Form::Label('proposaltitle', 'Proposal Title')}}
-        {{Form::text('proposaltitle', '', ['class' => 'form-control', 'placeholder' => 'Title'])}}
+        {{Form::Label('title', 'Title')}}
+        {{Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Title'])}}
     </div>
     <div class="form-group">
-        {{Form::Label('proposal', 'Proposal')}}
-        {{Form::textarea('proposal', '', ['id' => 'article-ckeditor','class' => 'form-control', 'placeholder' => 'Proposal'])}}
+        {{Form::Label('text', 'Proposal')}}
+        {{Form::textarea('text', '', ['id' => 'article-ckeditor','class' => 'form-control', 'placeholder' => 'Proposal'])}}
     </div>
     <div class="form-group">
         {{Form::Label('cost', 'Cost')}}

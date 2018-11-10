@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <a href="/proposals" class="btn btn-defsult">Go Back</a>
-    <h1>{{$proposal->proposaltitle}}</h1>
+    <a href="/proposals" class="btn btn-default">Go Back</a>
+    <h1>{{$proposal->title}}</h1>
 
     <div>
         {!! $proposal->proposal !!}
